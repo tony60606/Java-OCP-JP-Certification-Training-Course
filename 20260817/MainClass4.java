@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.sample;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/**
+ *
+ * @author ttoon
+ */
+public class MainClass4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        File file = new File("note1.txt") ;
+        writeTest(file) ;
+        
+    }
+
+    private static void writeTest(File file) {
+       
+        String temp = "ByteStream 位元處理 2026-08-17" ;
+        
+        try(FileOutputStream FO  = new FileOutputStream(file)) {
+            FO.write(temp.getBytes());
+            System.out.println("資料輸出完成");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }
+}
